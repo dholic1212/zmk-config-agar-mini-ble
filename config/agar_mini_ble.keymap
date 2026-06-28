@@ -26,6 +26,24 @@
 
             label = "LM_ALT";
         };
+        lm: lm {
+            compatible = "zmk,behavior-macro-two-param";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <2>;
+            bindings = 
+                    <¯o_param_1to1>
+                , <¯o_press &mo 0>
+                , <¯o_param_2to1>
+                , <¯o_press &kp 0>
+                , <¯o_pause_for_release>
+                , <¯o_param_2to1>
+                , <¯o_release &kp 0>
+                , <¯o_param_1to1>
+                , <¯o_release &mo 0>
+                ;
+          };
+        
     };
 
     behaviors {
