@@ -8,4 +8,5 @@ config ZMK_KEYBOARD_NAME
 
 config LED
     default y
-
+config ZMK_STUDIO
+    default y
