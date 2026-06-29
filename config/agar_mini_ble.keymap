@@ -34,13 +34,27 @@
     };
 
     behaviors {
-        lm3_alt: lm3_alt {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LM3_ALT";
-            bindings = <&lt>, <&kp>;
-
+        lm: layer_mod {
+            compatible = "zmk,behavior-macro-two-param";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+
+            wait-ms = <10>;
+            tap-ms = <0>;
+
+            bindings
+                = <&macro_param_1to1>
+                , <&macro_press &mo MACRO_PLACEHOLDER>
+
+                , <&macro_param_2to1>
+                , <&macro_press &kp MACRO_PLACEHOLDER>
+
+                , <&macro_pause_for_release>
+
+                , <&macro_param_2to1>
+                , <&macro_release &kp MACRO_PLACEHOLDER>
+
+                , <&macro_param_1to1>
+                , <&macro_release &mo MACRO_PLACEHOLDER>;
         };
     };
 
